@@ -1,10 +1,10 @@
-#Primera Part(Git y control de versiones):
+# Primera Parte(Git y control de versiones):
 
-![Main](/home/Emmanuel/Desktop/ie0417/laboratorios/laboratorio2/)
-![Remotas](/home/Emmanuel/Desktop/ie0417/laboratorios/laboratorio2/)
+![Main](https://github.com/emmanuelavilesucr/ie0417/blob/main/laboratorios/laboratorio2/Learning%20Git-(Main).jpeg)
+![Remotas](https://github.com/emmanuelavilesucr/ie0417/blob/main/laboratorios/laboratorio2/LearningGit-(Remotas).jpeg)
 
 
-#Segunda Parte(Documentación automática en C++ y Python):
+# Segunda Parte(Documentación automática en C++ y Python):
 
 - https://proyectoenpython.netlify.app/
 - https://proyectoencmasmas.netlify.app/
