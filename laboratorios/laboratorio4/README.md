@@ -3,9 +3,9 @@
 ## 1. Investigación
 ### Buscar al menos 3 preguntas reales de entrevistas (Glassdoor, LeetCode, Discussions, GitHub, libros como Cracking the Coding Interview o Design Patterns Interview Questions). Deben enfocarse en preguntas de diseño de software.
 
-- 1. Describa un escenario donde el patron Strategy seria apropiado y que compensaciones consideraría
-- 2. Describa un escenario donde utilizaria el patron Singleton
-- 3. ¿Como se puede aplicar el patron Command en un marco de interfaz de usuario (UI)?
+1. Describa un escenario donde el patron Strategy seria apropiado y que compensaciones consideraría
+2. Describa un escenario donde utilizaria el patron Singleton
+3. ¿Como se puede aplicar el patron Command en un marco de interfaz de usuario (UI)?
 
 ## 2. Análisis y aplicación de patrones
 ### Problema:
