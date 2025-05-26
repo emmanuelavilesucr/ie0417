@@ -1,0 +1,117 @@
+<!-- templates/sensors/dashboard.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}IoT UCR{% endblock %}
+
+
+{% block header %}
+  <header class="bg-white shadow p-4 mb-6">
+    <div class="container mx-auto flex items-center justify-between">
+      <h1 class="text-2xl font-semibold">Plataforma IoT UCR</h1>
+
+      <!-- Contenedor de botones del header -->
+      <div class="flex items-center gap-4">
+        
+        <!-- Botón para alternar pub/sub -->
+        <button id="toggle-pub-sub" class="w-8 h-8 flex items-center justify-center">
+          <!-- Imagen inicial (por ejemplo sub.png) -->
+          <img id="pub-sub-icon"
+              src="{% static 'img/pub.png' %}"
+              alt="sub"
+              class="h-6 w-6  icon-toggle"
+              title="Cambiar modo pub/sub">
+        </button>
+
+        <form method="post" action="{% url 'logout' %}" class="inline">
+          {% csrf_token %}
+          <button id="logout-button" class="w-8 h-8 flex items-center justify-center">
+  
+            <img id="logout-icon"
+                src="{% static 'img/logout.png' %}"
+                alt="sub"
+                class="h-6 w-6  icon-toggle"
+                title="button to logout">
+          </button>
+        </form>
+        
+
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+
+{% block content %}
+
+  <div id="sensor-container" class="sensor-grid max-h-screen overflow-y-auto grid gap-6 px-2 md:px-4"
+      style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+
+  {% for sensor in sensors %}
+    <div id="sensor-{{ sensor.id }}"
+         class="sensor-component bg-white shadow rounded p-4"
+         data-sensor-id="{{ sensor.id }}">
+
+      <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+        <div class="w-full sm:w-auto text-center">
+          <h2 class="text-xl font-semibold leading-snug break-words">
+            {{ sensor.name }}
+          </h2>
+          <p class="text-sm text-gray-500">
+            Tipo: {{ sensor.sensor_type }} — Unidad: {{ sensor.unit }}
+          </p>
+        </div>
+
+        <div class="flex gap-2 self-center sm:self-auto">
+          <button class="toggle-mode w-8 h-8 flex items-center justify-center bg-blue-500 rounded"
+                  title="Ver gráfico">
+            <img src="{% static 'img/graph.png' %}"
+                 alt="Gráfico"
+                 class="h-4 w-4 icon-toggle">
+          </button>
+          <button class="fullscreen-btn w-8 h-8 flex items-center justify-center bg-gray-200 rounded"
+                  title="Pantalla completa">
+            <img src="{% static 'img/fullscreen-icon.png' %}"
+                 alt="Fullscreen"
+                 class="h-4 w-4">
+          </button>
+        </div>
+      </div>
+
+      
+      <p class="text-3xl last-value font-bold text-blue-600 my-2 text-center">
+        --
+      </p>
+      <p class="text-xl text-gray-400 timestamp text-center">
+        (--)
+      </p>
+
+      <div class="sensor-body"></div>
+    </div>
+  {% endfor %}
+  </div>
+ 
+
+<div id="actuator-container" class="sensor-grid max-h-screen overflow-y-auto grid gap-6 px-2 md:px-4 hidden"
+     style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+  {% for actuator in actuators %}
+    <div class="actuator-component bg-white shadow rounded p-4 space-y-6"
+         data-actuator-id="{{ actuator.id }}"
+         data-actuator-type="{{ actuator.actuator_type }}">
+
+      <!-- Título y tipo -->
+      <div class="flex flex-col items-center justify-center gap-2">
+        <h2 class="text-xl font-semibold text-center leading-snug break-words">
+          {{ actuator.name }}
+        </h2>
+        
+      </div>
+
+      <!-- Cuerpo dinámico -->
+      <div class="actuator-body mt-4 w-full"></div>
+
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
