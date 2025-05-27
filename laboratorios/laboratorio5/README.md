@@ -231,18 +231,3 @@ http://localhost:8000
 
 ---
 
-
-### Prueba de conexion con la base de datos
-
-Se crea una cuenta nueva:
-
-![image](https://github.com/user-attachments/assets/04aa8a6e-f364-4651-97ad-37ce55357446)
-
-Esta se guarda en la base de datos correctamente, lo que permite la autenticacion.
-
-![image](https://github.com/user-attachments/assets/d1f6331b-9f1a-4e93-8290-b9e6d4e47e94)
-
-Otra prueba de la conexion adecuada con la base de datos es que se logra pedir la informacion de los sensores y actuadores. Esta version no incluye tiempo real por que no se tiene una conexion con sensores IoT.
-
----
-
