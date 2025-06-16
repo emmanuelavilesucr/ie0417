@@ -18,7 +18,7 @@ Su backend está construido sobre **Django** y emplea una arquitectura modular c
 
 ### Diagrama de la arquitectura:
 
-![Diagrama]()
+![Diagrama](https://github.com/emmanuelavilesucr/ie0417/blob/main/laboratorios/laboratorio9/Imagenes/Diagrama.jpeg)
 
 
 ### Módulos y tecnologías:
