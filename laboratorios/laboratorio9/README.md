@@ -10,9 +10,9 @@
 
 ### Descripción:
 
-**EIEInfo** es el sistema de información oficial de la Escuela de Ingeniería Eléctrica de la Universidad de Costa Rica. Este sistema fue desarrollado internamente para cubrir las necesidades administrativas, académicas y de extensión de la unidad.
-
-Su backend está construido sobre **Django** y emplea una arquitectura modular con integración a servicios externos como Google y Facebook. El despliegue se realiza en servidores de la escuela, utilizando tecnologías como **NGINX**, **Gunicorn**, y **Docker** para pruebas.
+El presente proyecto se enfoca en el análisis técnico del sistema *EIEInfo*, una plataforma desarrollada por la Escuela de Ingeniería Eléctrica de la Universidad de Costa Rica. El objetivo principal es comprender a fondo cómo está construido este sistema, evaluar su calidad técnica y funcional, y proponer mejoras que puedan contribuir a su evolución y mantenimiento a largo plazo.
+El sistema *EIEInfo* es bastante amplio. No solo gestiona procesos académicos como matrícula y notas, sino que también da soporte a funciones administrativas, de extensión y comunicación interna. A lo largo del curso, el enfoque será actuar como un equipo de consultores que entra a revisar un sistema real, tratando de entender su estructura, cómo fue diseñado, qué tan bien está escrito el código, cómo se despliega y mantiene, y qué tan preparado está para seguir creciendo o adaptarse. 
+El sistema está diseñado en *Django, concretamente su Backend, lo cual da un buen punto de partida porque se trata de un framework robusto, pero también es importante reconocer que al ser un desarrollo hecho por el equipo interno de la escuela, puede haber áreas que no siguen todas las mejores prácticas modernas, especialmente en cuanto a modularidad, documentación o pruebas automatizadas. Por otro lado, el sistema **EIEInfo* emplea la integración de servicios externos como Google y Facebook, utilizando tecnologías como *NGINX, **Gunicorn, y **Docker*.
 
 
 
