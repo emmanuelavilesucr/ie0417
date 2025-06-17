@@ -16,10 +16,13 @@ El sistema está diseñado en **Django**, concretamente su Backend, lo cual da u
 
 
 
-### Diagrama de la arquitectura:
+### Diagrama de la arquitectura física:
 
 ![Diagrama](https://github.com/emmanuelavilesucr/ie0417/blob/main/laboratorios/laboratorio9/Imagenes/Diagrama.jpeg)
 
+### Diagrama de la arquitectura lógica:
+
+![Diagrama](https://github.com/emmanuelavilesucr/ie0417/blob/main/laboratorios/laboratorio9/Imagenes/DiagramaLogica.jpeg)
 
 ### Módulos y tecnologías:
 
