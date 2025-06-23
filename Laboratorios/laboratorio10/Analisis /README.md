@@ -3,6 +3,8 @@
 
 ![CodigoGeneral](https://github.com/DAcosta3103/ie0417-proyecto/blob/main/Laboratorios/laboratorio10/Analisis%20/Imagenes/CodigoGeneral.png)
 
+![Actividad](https://github.com/DAcosta3103/ie0417-proyecto/blob/main/Laboratorios/laboratorio10/Analisis%20/Imagenes/Actividad.png)
+
 En general los resultados arrojados por SonarQube muestran un panorama muy positivos. Por otro lado, el análisis sugiere que el sitio web necesita mejorar su seguridad y fiabilidad. Además, se sugiere implementar testing automático para elevar la cobertura, y reducir las duplicaciones mediante refactorización para que el proyecto sea más sostenible.
 
 
@@ -17,7 +19,6 @@ En general los resultados arrojados por SonarQube muestran un panorama muy posit
 - **Duplicación:** El porcentaje de Duplicación es **29.3%** sobre **279k líneas**. Es significa que alrededor de una tercera parte del código se repite. Lo que puede provocar errores.
 
 - **Problemas aceptados:** No existen problemas aceptados, lo que significa que no hay debilidades encontradas o también, podría deberse a que nadie ha realizado un análisis a profundidad sobre la jerarquía de problemas a resolver.
-![Actividad](https://github.com/DAcosta3103/ie0417-proyecto/blob/main/Laboratorios/laboratorio10/Analisis%20/Imagenes/Actividad.png)
 
 ![Severidad](https://github.com/DAcosta3103/ie0417-proyecto/blob/main/Laboratorios/laboratorio10/Analisis%20/Imagenes/Severidad.png)
 
