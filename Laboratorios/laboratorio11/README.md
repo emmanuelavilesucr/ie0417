@@ -206,9 +206,11 @@ Estas acciones no solo beneficiarán al equipo de desarrollo, sino también a to
 
 ## 8. Recomendaciones Futuras
 
-- Incorporar integración continua (CI) para ejecutar pruebas automáticamente en cada commit.
-- Añadir análisis dinámico de seguridad (DAST) con herramientas como OWASP ZAP.
-- Implementar logging centralizado con auditoría de eventos sensibles.
-- Establecer un pipeline DevSecOps para prevenir problemas de seguridad desde etapas tempranas.
 
+ - **Calidad de código**  Configurar **pre-commit hooks** con `black`, `isort`, `flake8`. Estilo uniforme y menos errores triviales. 
+ - **Pruebas GUI esenciales** Scripts con **Selenium WebDriver** (login y CRUD principal) ejecutados en GitHub Actions. 
+ - **Seguridad automatizada**  Incluir **Bandit** (estático) y **OWASP ZAP** (*action* semanal, solo spider + passive scan). Bloquea vulnerabilidades evidentes (XSS, SQLi) antes de producción. 
+ - **HTTPS sin costo** Certificados **Let’s Encrypt** con renovación automática (`cron`) o servir front estático via GitHub Pages. 
+ - **Logs útiles**  Activar `logging` con `RotatingFileHandler`; formato JSON. Facilita depuración y auditoría básica. |
+ - **Documentación viva**  Mantener una wiki. 
 ---
