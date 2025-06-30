@@ -131,3 +131,115 @@ Al implementar pruebas automatizadas, eliminar código redundante y fortalecer l
 Estas acciones no solo beneficiarán al equipo de desarrollo, sino también a todos los usuarios finales, quienes experimentarán una plataforma más fluida, segura y robusta.
 
 ---
+
+---
+
+## 6. 🛠️ Diagramas Técnicos Complementarios
+
+### Diagrama de Arquitectura Propuesta (Simplificada)
+```
+                +---------------------+
+                |   Navegador Web     |
+                +---------+-----------+
+                          |
+                          v
+                +---------+-----------+
+                |     Servidor Web     |
+                | (Django / Flask API) |
+                +---------+-----------+
+                          |
+        +-----------------+-----------------+
+        |                                   |
+        v                                   v
++---------------+                 +------------------+
+| Motor de Base |                 | Servicios Externos|
+|   de Datos    |                 | (Auth, Email, etc)|
++---------------+                 +------------------+
+```
+
+---
+
+### Diagrama de Seguridad: Flujo de Prevención XSS y SQLi
+
+```
+[ Usuario ]
+    |
+    v
+[ Formulario Web ]
+    |
+    v
+[ Validación del Lado del Cliente (JS) ]
+    |
+    v
+[ Backend ]
+  |- Escapa caracteres peligrosos (XSS)
+  |- Prepara consultas parametrizadas (SQLi)
+    |
+    v
+[ Base de Datos ]
+```
+
+---
+
+## 7. 🧪 Fragmentos de Código Adicionales
+
+### Validación Extendida de Inputs (XSS y Longitud)
+
+```python
+from django.core.exceptions import ValidationError
+import re
+
+def validar_input_usuario(input_str):
+    if not re.match(r'^[a-zA-Z0-9_.-]{4,30}$', input_str):
+        raise ValidationError("Input inválido: solo se permiten letras, números y ciertos caracteres.")
+```
+
+### Generación y Validación de Tokens de Sesión
+
+```python
+import secrets
+from datetime import datetime, timedelta
+
+def generar_token_seguro():
+    return secrets.token_urlsafe(32)
+
+def token_valido(fecha_creacion, duracion_minutos=30):
+    return datetime.now() < fecha_creacion + timedelta(minutes=duracion_minutos)
+```
+
+### Pruebas Unitarias Adicionales
+
+```python
+def test_validar_input_usuario_valido():
+    assert validar_input_usuario("usuario_123") is None
+
+def test_validar_input_usuario_invalido():
+    try:
+        validar_input_usuario("<<script>>")
+    except ValidationError as e:
+        assert str(e) == "['Input inválido: solo se permiten letras, números y ciertos caracteres.']"
+```
+
+### Refactorización con Componentes Reutilizables (Frontend - HTML + Jinja2)
+
+```html
+<!-- components/usuario_card.html -->
+<div class="usuario-card">
+  <h3>{{ usuario.nombre }}</h3>
+  <p>{{ usuario.rol }}</p>
+</div>
+
+<!-- uso -->
+{% include "components/usuario_card.html" %}
+```
+
+---
+
+## 8. 📚 Recomendaciones Futuras
+
+- Incorporar integración continua (CI) para ejecutar pruebas automáticamente en cada commit.
+- Añadir análisis dinámico de seguridad (DAST) con herramientas como OWASP ZAP.
+- Implementar logging centralizado con auditoría de eventos sensibles.
+- Establecer un pipeline DevSecOps para prevenir problemas de seguridad desde etapas tempranas.
+
+---
