@@ -1,34 +1,41 @@
 # 📄 Propuesta de Mejora Técnica – Plataforma EIEInfo  
 **Semana 3 (23–29 de junio)**  
-**Autores:** Equipo de Evaluación Técnica – Plataforma EIEInfo  
-**Fecha de entrega:** 29 de junio de 2025  
+**Fecha de entrega: 29 de junio**
+
+## Profesor: Esteban Badilla Alvarado 
+
+## Integrantes:
+
+- Emmanuel Avilés Ramírez (C20883) 
+- Diego Acosta Obando (C00041)
+- Josue Zúñiga Jiménez (B98738)
 
 ---
 
-## 1. ✅ Objetivo  
+## 1. Objetivo  
 
 El presente documento tiene como propósito identificar e implementar al menos tres mejoras técnicas, respaldadas por evidencia empírica obtenida a partir de entrevistas, análisis estático con herramientas como SonarQube y principios reconocidos de ingeniería de software. El objetivo es optimizar la **funcionalidad, seguridad y usabilidad** del sistema EIEInfo, elevando así su calidad técnica y experiencia de usuario.
 
 ---
 
-## 2. 📌 Áreas de Mejora Identificadas
+## 2. Áreas de Mejora Identificadas
 
-### 🧪 Mejora 1: Implementación de pruebas automatizadas (Testing Coverage)  
+### Mejora 1: Implementación de pruebas automatizadas (Testing Coverage)  
 
-**📊 Evidencia Técnica:**  
+**Evidencia Técnica:**  
 - **Cobertura actual de pruebas:** 0.0% (SonarQube).  
 - **Riesgo asociado:** Alta probabilidad de defectos no identificados antes del despliegue en producción.
 
-**📌 Justificación Técnica:**  
+**Justificación Técnica:**  
 La cobertura de pruebas (code coverage) permite cuantificar la proporción del código fuente que ha sido verificada mediante pruebas automatizadas. Una cobertura adecuada contribuye significativamente a la estabilidad del sistema, facilita el mantenimiento y reduce el costo de errores en etapas avanzadas del ciclo de vida del software.
 
 Implementar herramientas como `coverage.py` para código Python y `Ranorex Studio` para pruebas funcionales de GUI garantiza un enfoque integral, abarcando tanto el backend como la interfaz gráfica del usuario.
 
-**🔧 Herramientas Sugeridas:**  
+**Herramientas Sugeridas:**  
 - `coverage.py` – Para análisis de cobertura de pruebas unitarias.  
 - `Ranorex Studio` – Para pruebas automatizadas de interfaces gráficas.  
 
-**📌 Ejemplo Técnico:**
+**Ejemplo Técnico:**
 ```python
 def test_usuario_login_exitoso():
     usuario = crear_usuario("profesora", "contrasena123")
@@ -38,17 +45,17 @@ def test_usuario_login_exitoso():
 
 ---
 
-### 🔁 Mejora 2: Refactorización para reducir duplicación de código  
+### Mejora 2: Refactorización para reducir duplicación de código  
 
-**📊 Evidencia Técnica:**  
+**Evidencia Técnica:**  
 - **Porcentaje de duplicación:** 29.3% en 279,000 líneas de código (SonarQube).  
 
-**📌 Justificación Técnica:**  
+**Justificación Técnica:**  
 El principio **DRY (Don't Repeat Yourself)** es un pilar fundamental del diseño limpio y sostenible. La duplicación excesiva no solo incrementa la deuda técnica, sino que también eleva el riesgo de inconsistencias lógicas y errores al modificar el sistema.
 
 Mediante la reutilización de componentes y plantillas base, se garantiza un sistema más limpio, mantenible y coherente.
 
-**📌 Ejemplo Técnico:**
+**Ejemplo Técnico:**
 ```html
 <!-- Código duplicado antes -->
 <div class="usuario-card">
@@ -62,22 +69,22 @@ Mediante la reutilización de componentes y plantillas base, se garantiza un sis
 
 ---
 
-### 🔐 Mejora 3: Corrección de vulnerabilidades críticas de seguridad  
+### Mejora 3: Corrección de vulnerabilidades críticas de seguridad  
 
-**📊 Evidencia Técnica:**  
+**Evidencia Técnica:**  
 - **Vulnerabilidades registradas:** 377 issues de seguridad.  
 - **Problemas tipo Blocker:** 67 (SonarQube).  
 
-**📌 Justificación Técnica:**  
+**Justificación Técnica:**  
 Las vulnerabilidades de seguridad representan un riesgo significativo para la integridad del sistema y la privacidad de los datos de los usuarios. En particular, se identificaron posibles vectores de ataque como **Cross-Site Scripting (XSS)**, **inyecciones SQL**, y falta de **hashing seguro** de contraseñas.
 
-**🔐 Medidas Propuestas:**  
+**Medidas Propuestas:**  
 - Validación estricta de entradas del usuario mediante expresiones regulares.  
 - Implementación de hashing con **bcrypt** y uso de tokens seguros.  
 - Configuración adecuada de políticas **CORS** y **encriptación HTTPS**.  
 - Uso de tokens temporales y autenticación basada en sesiones.
 
-**📌 Ejemplo Técnico:**
+**Ejemplo Técnico:**
 ```python
 # Validación segura de nombre de usuario
 if not re.match(r'^[a-zA-Z0-9_]+$', nombre_usuario):
@@ -90,7 +97,7 @@ token = secrets.token_urlsafe(32)
 
 ---
 
-## 3. 🧩 Maqueta / Diagrama del Rediseño de Autenticación  
+## 3. Maqueta / Diagrama del Rediseño de Autenticación  
 
 A continuación se presenta una propuesta de rediseño para el flujo de autenticación, incorporando validaciones robustas y manejo seguro de credenciales:
 
@@ -112,7 +119,7 @@ A continuación se presenta una propuesta de rediseño para el flujo de autentic
 
 ---
 
-## 4. ⚖️ Análisis de Impacto: Costo vs. Beneficio  
+## 4. Análisis de Impacto: Costo vs. Beneficio  
 
 | Propuesta                            | Costo (Tiempo / Recursos)   | Beneficio Directo                                 | Viabilidad |
 |-------------------------------------|------------------------------|---------------------------------------------------|------------|
@@ -122,7 +129,7 @@ A continuación se presenta una propuesta de rediseño para el flujo de autentic
 
 ---
 
-## 5. 🧾 Conclusión  
+## 5. Conclusión  
 
 Las mejoras propuestas no solo abordan debilidades técnicas identificadas objetivamente a través de herramientas como SonarQube y entrevistas a usuarios clave, sino que representan un avance tangible hacia la profesionalización de la plataforma EIEInfo. 
 
@@ -134,7 +141,7 @@ Estas acciones no solo beneficiarán al equipo de desarrollo, sino también a to
 
 ---
 
-## 6. 🛠️ Diagramas Técnicos Complementarios
+## 6. Diagramas Técnicos Complementarios
 
 ### Diagrama de Arquitectura Propuesta (Simplificada)
 ```
@@ -181,7 +188,7 @@ Estas acciones no solo beneficiarán al equipo de desarrollo, sino también a to
 
 ---
 
-## 7. 🧪 Fragmentos de Código Adicionales
+## 7. Fragmentos de Código Adicionales
 
 ### Validación Extendida de Inputs (XSS y Longitud)
 
@@ -235,7 +242,7 @@ def test_validar_input_usuario_invalido():
 
 ---
 
-## 8. 📚 Recomendaciones Futuras
+## 8. Recomendaciones Futuras
 
 - Incorporar integración continua (CI) para ejecutar pruebas automáticamente en cada commit.
 - Añadir análisis dinámico de seguridad (DAST) con herramientas como OWASP ZAP.
