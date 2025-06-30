@@ -1,4 +1,4 @@
-# 📄 Propuesta de Mejora Técnica – Plataforma EIEInfo  
+# Propuesta de Mejora Técnica – Plataforma EIEInfo  
 **Semana 3 (23–29 de junio)**  
 **Fecha de entrega: 29 de junio**
 
@@ -24,12 +24,12 @@ El presente documento tiene como propósito identificar e implementar al menos t
 
 **Evidencia Técnica:**  
 - **Cobertura actual de pruebas:** 0.0% (SonarQube).  
-- **Riesgo asociado:** Alta probabilidad de defectos no identificados antes del despliegue en producción.
+- **Riesgo asociado:** Aumenta la probabilidad de defectos no identificados antes del despliegue en producción.
 
 **Justificación Técnica:**  
 La cobertura de pruebas (code coverage) permite cuantificar la proporción del código fuente que ha sido verificada mediante pruebas automatizadas. Una cobertura adecuada contribuye significativamente a la estabilidad del sistema, facilita el mantenimiento y reduce el costo de errores en etapas avanzadas del ciclo de vida del software.
 
-Implementar herramientas como `coverage.py` para código Python y `Ranorex Studio` para pruebas funcionales de GUI garantiza un enfoque integral, abarcando tanto el backend como la interfaz gráfica del usuario.
+Implementar herramientas como `coverage.py` para código Python y el software `Ranorex Studio` para pruebas funcionales de GUI garantiza un enfoque integral, abarcando tanto el backend como la interfaz gráfica del usuario.
 
 **Herramientas Sugeridas:**  
 - `coverage.py` – Para análisis de cobertura de pruebas unitarias.  
@@ -38,8 +38,8 @@ Implementar herramientas como `coverage.py` para código Python y `Ranorex Studi
 **Ejemplo Técnico:**
 ```python
 def test_usuario_login_exitoso():
-    usuario = crear_usuario("profesora", "contrasena123")
-    resultado = login(usuario.nombre, "contrasena123")
+    usuario = crear_usuario("profesorDG", "Micros123")
+    resultado = login(usuario.nombre, "Micros123")
     assert resultado is True
 ```
 
@@ -97,25 +97,11 @@ token = secrets.token_urlsafe(32)
 
 ---
 
-## 3. Maqueta / Diagrama del Rediseño de Autenticación  
+## 3. Diagrama del Rediseño de Autenticación  
 
 A continuación se presenta una propuesta de rediseño para el flujo de autenticación, incorporando validaciones robustas y manejo seguro de credenciales:
 
-```
-[ Usuario ]
-    |
-    v
-[ Formulario de Login ] --> Validación: regex + límites de longitud
-    |
-    v
-[ Backend ] --> Verificación con bcrypt <--> [ Base de Datos ]
-    |
-    v
-[ Generación de Token de Sesión ] --> Encriptado, expiración automática
-    |
-    v
-[ Redirección a Zona Segura ]
-```
+![Diagrama del Rediseño de Autenticación](Imagenes/DiagRediseñoAuth.png)
 
 ---
 
@@ -127,68 +113,27 @@ A continuación se presenta una propuesta de rediseño para el flujo de autentic
 | Refactorización de código duplicado | Medio                        | Mejora de mantenimiento, reducción de errores     | Alta       |
 | Refuerzo de seguridad               | Medio - Alto (según alcance) | Protección de datos sensibles, confianza del usuario | Alta    |
 
----
 
-## 5. Conclusión  
-
-Las mejoras propuestas no solo abordan debilidades técnicas identificadas objetivamente a través de herramientas como SonarQube y entrevistas a usuarios clave, sino que representan un avance tangible hacia la profesionalización de la plataforma EIEInfo. 
-
-Al implementar pruebas automatizadas, eliminar código redundante y fortalecer la seguridad, se garantiza un sistema más **estable, escalable y confiable**, alineado con las mejores prácticas del desarrollo de software moderno.
-
-Estas acciones no solo beneficiarán al equipo de desarrollo, sino también a todos los usuarios finales, quienes experimentarán una plataforma más fluida, segura y robusta.
 
 ---
 
----
+## 5. Diagramas Técnicos Complementarios
 
-## 6. Diagramas Técnicos Complementarios
+### Diagrama de Arquitectura Propuesta 
 
-### Diagrama de Arquitectura Propuesta (Simplificada)
-```
-                +---------------------+
-                |   Navegador Web     |
-                +---------+-----------+
-                          |
-                          v
-                +---------+-----------+
-                |     Servidor Web     |
-                | (Django / Flask API) |
-                +---------+-----------+
-                          |
-        +-----------------+-----------------+
-        |                                   |
-        v                                   v
-+---------------+                 +------------------+
-| Motor de Base |                 | Servicios Externos|
-|   de Datos    |                 | (Auth, Email, etc)|
-+---------------+                 +------------------+
-```
+![Diagrama de ARquitectura Propuesta](Imagenes/DiagArqProp.png)
+
 
 ---
 
 ### Diagrama de Seguridad: Flujo de Prevención XSS y SQLi
 
-```
-[ Usuario ]
-    |
-    v
-[ Formulario Web ]
-    |
-    v
-[ Validación del Lado del Cliente (JS) ]
-    |
-    v
-[ Backend ]
-  |- Escapa caracteres peligrosos (XSS)
-  |- Prepara consultas parametrizadas (SQLi)
-    |
-    v
-[ Base de Datos ]
-```
+
+![Diagrama de Seguridad](Imagenes/DiagSeguridad.png)
 
 ---
 
-## 7. Fragmentos de Código Adicionales
+## 6. Fragmentos de Código Adicionales
 
 ### Validación Extendida de Inputs (XSS y Longitud)
 
@@ -239,6 +184,18 @@ def test_validar_input_usuario_invalido():
 <!-- uso -->
 {% include "components/usuario_card.html" %}
 ```
+
+---
+
+---
+
+## 7. Conclusión  
+
+Las mejoras propuestas no solo abordan debilidades técnicas identificadas objetivamente a través de herramientas como SonarQube y entrevistas a usuarios clave, sino que representan un avance tangible hacia la profesionalización de la plataforma EIEInfo. 
+
+Al implementar pruebas automatizadas, eliminar código redundante y fortalecer la seguridad, se garantiza un sistema más **estable, escalable y confiable**, alineado con las mejores prácticas del desarrollo de software moderno.
+
+Estas acciones no solo beneficiarán al equipo de desarrollo, sino también a todos los usuarios finales, quienes experimentarán una plataforma más fluida, segura y robusta.
 
 ---
 
