@@ -1,113 +1,133 @@
-# 📄 Propuesta de Mejora Técnica – Plataforma EIEInfo
+# 📄 Propuesta de Mejora Técnica – Plataforma EIEInfo  
 **Semana 3 (23–29 de junio)**  
-**Autores:** Equipo de Evaluación Técnica EIEInfo  
-**Fecha de entrega:** 29 de junio  
+**Autores:** Equipo de Evaluación Técnica – Plataforma EIEInfo  
+**Fecha de entrega:** 29 de junio de 2025  
 
 ---
 
 ## 1. ✅ Objetivo  
-Identificar y proponer al menos tres mejoras técnicas fundamentadas en evidencia (entrevistas, análisis SonarQube y principios de diseño de software) para optimizar el funcionamiento, seguridad y usabilidad de la plataforma EIEInfo.
+
+El presente documento tiene como propósito identificar e implementar al menos tres mejoras técnicas, respaldadas por evidencia empírica obtenida a partir de entrevistas, análisis estático con herramientas como SonarQube y principios reconocidos de ingeniería de software. El objetivo es optimizar la **funcionalidad, seguridad y usabilidad** del sistema EIEInfo, elevando así su calidad técnica y experiencia de usuario.
 
 ---
 
 ## 2. 📌 Áreas de Mejora Identificadas
 
-### Mejora 1: Implementación de pruebas automatizadas (Testing Coverage)  
-**Evidencia:**  
-- **Cobertura actual:** 0.0% (SonarQube).  
-- Riesgo alto de errores no detectados antes de producción.
+### 🧪 Mejora 1: Implementación de pruebas automatizadas (Testing Coverage)  
 
-**Justificación:**  
+**📊 Evidencia Técnica:**  
+- **Cobertura actual de pruebas:** 0.0% (SonarQube).  
+- **Riesgo asociado:** Alta probabilidad de defectos no identificados antes del despliegue en producción.
 
-- **Testing Coverage:** Se refiere a una forma de cuantificar la parte del Código que se ha probado en tiempo real. Este método consiste en una herramienta de gran utilidad en desarrollo de Software, dado a que ayuda a validar de manera eficaz las diferentes partes del Código, con el fin de identificar brechas en la metodología de pruebas y encontrar errores poco visibles del Código.  La **cobertura de pruebas** expresa un porcentaje, que indica la proporción de elementos probados en comparación con el número total de elementos en la aplicación, en este caso líneas de Código. Lo que quiere decir, que si se tiene 100 líneas de código y sus pruebas cubren 80 de ellas, su cobertura de pruebas es del 80%. 
+**📌 Justificación Técnica:**  
+La cobertura de pruebas (code coverage) permite cuantificar la proporción del código fuente que ha sido verificada mediante pruebas automatizadas. Una cobertura adecuada contribuye significativamente a la estabilidad del sistema, facilita el mantenimiento y reduce el costo de errores en etapas avanzadas del ciclo de vida del software.
 
-- La cobertura de pruebas ayuda a identificar partes del código que no han sido tocadas por las pruebas, lo que le permite crear nuevas pruebas para cubrir esas áreas. Además, al analizar la cobertura, puede refinar sus casos de prueba, lo cual ayuda a reducir la probabilidad de que aparezcan defectos en producción. Algunas de la herramientas de testing Coverage son: Ranorex Studio y Coverage.py.
+Implementar herramientas como `coverage.py` para código Python y `Ranorex Studio` para pruebas funcionales de GUI garantiza un enfoque integral, abarcando tanto el backend como la interfaz gráfica del usuario.
 
-- **Coverage.py** se utilizara para cuantificar la cantidad de duplicidad y mejorar la calidad del código mientras que Ranorex realizara pruebas automatizadas al GUI. 
+**🔧 Herramientas Sugeridas:**  
+- `coverage.py` – Para análisis de cobertura de pruebas unitarias.  
+- `Ranorex Studio` – Para pruebas automatizadas de interfaces gráficas.  
 
-
-**Propuesta Técnica (Pseudocódigo):**
+**📌 Ejemplo Técnico:**
 ```python
 def test_usuario_login_exitoso():
     usuario = crear_usuario("profesora", "contrasena123")
     resultado = login(usuario.nombre, "contrasena123")
-    assert resultado == True
+    assert resultado is True
 ```
 
 ---
 
-### Mejora 2: Refactorización para reducir duplicación de código  
-**Evidencia:**  
-- 29.3% de duplicación en 279k líneas (SonarQube).  
-- Código repetido = mayor riesgo de errores y más tiempo de mantenimiento.
+### 🔁 Mejora 2: Refactorización para reducir duplicación de código  
 
-**Justificación:**  
-- Seguir principios DRY ("Don't Repeat Yourself").  
-- Facilita refactorización futura y mejora mantenibilidad.
+**📊 Evidencia Técnica:**  
+- **Porcentaje de duplicación:** 29.3% en 279,000 líneas de código (SonarQube).  
 
-**Propuesta Técnica:**
-```javascript
-// Antes: código duplicado en varias vistas HTML
-<div class="usuario-card"> ... </div>
+**📌 Justificación Técnica:**  
+El principio **DRY (Don't Repeat Yourself)** es un pilar fundamental del diseño limpio y sostenible. La duplicación excesiva no solo incrementa la deuda técnica, sino que también eleva el riesgo de inconsistencias lógicas y errores al modificar el sistema.
 
-// Después: plantilla base reutilizable
+Mediante la reutilización de componentes y plantillas base, se garantiza un sistema más limpio, mantenible y coherente.
+
+**📌 Ejemplo Técnico:**
+```html
+<!-- Código duplicado antes -->
+<div class="usuario-card">
+  <h3>{{ usuario.nombre }}</h3>
+  <p>{{ usuario.rol }}</p>
+</div>
+
+<!-- Reutilización con plantilla -->
 {% include "components/usuario_card.html" %}
 ```
 
 ---
 
-### Mejora 3: Corrección de problemas críticos de seguridad  
-**Evidencia:**  
-- 377 vulnerabilidades de seguridad y 67 problemas tipo *Blocker* (SonarQube).
+### 🔐 Mejora 3: Corrección de vulnerabilidades críticas de seguridad  
 
-**Justificación:**  
-- Riesgos de fuga de información.  
-- Afecta directamente la confianza de usuarios (como reportó la profesora entrevistada).
+**📊 Evidencia Técnica:**  
+- **Vulnerabilidades registradas:** 377 issues de seguridad.  
+- **Problemas tipo Blocker:** 67 (SonarQube).  
 
-**Propuesta Técnica (Checklist):**  
+**📌 Justificación Técnica:**  
+Las vulnerabilidades de seguridad representan un riesgo significativo para la integridad del sistema y la privacidad de los datos de los usuarios. En particular, se identificaron posibles vectores de ataque como **Cross-Site Scripting (XSS)**, **inyecciones SQL**, y falta de **hashing seguro** de contraseñas.
 
-- El programa debe de validar las entradas de usuario para evitar **XSS**, ya que **XSS** es una situación de fuga de información, mediante el cual un atacante inserta scripts maliciosos en formularios o URLs para ejecutar código en el navegador de otros usuarios. Por otro lado, la inyección SQL es otra situación que puede ocurrir, y consiste en una situación manipulación externa maliciosa de consultas SQL para ejecutar comandos no deseados.
+**🔐 Medidas Propuestas:**  
+- Validación estricta de entradas del usuario mediante expresiones regulares.  
+- Implementación de hashing con **bcrypt** y uso de tokens seguros.  
+- Configuración adecuada de políticas **CORS** y **encriptación HTTPS**.  
+- Uso de tokens temporales y autenticación basada en sesiones.
 
-- Se implementara encriptación de contraseñas por medio de **Hash** con bcrypt (función de hashing con salting y coste computacional), ya esto le dificulta al atacante obtener la contraseñas e información de la base de datos. Por otro lado, la generacion de tokens seguros, es indispensable para mantener el codigo seguro y evitar fugas de informacion, por medio funciones como desecrets.token_urlsafe().
-
-- Se implemetaran politicas de de control de dominios por medio de **CORS** y HTTPS para la encriptacion de la comunicacion entre el navegador y el servidor. 
-  
+**📌 Ejemplo Técnico:**
 ```python
-# Validación de entrada en Django
+# Validación segura de nombre de usuario
 if not re.match(r'^[a-zA-Z0-9_]+$', nombre_usuario):
-    raise ValidationError("Nombre inválido.")
+    raise ValidationError("Nombre de usuario inválido.")
+
+# Generación de token seguro
+import secrets
+token = secrets.token_urlsafe(32)
 ```
 
 ---
 
-## 3. 🧩 Maqueta / Diagrama del Rediseño Sugerido
+## 3. 🧩 Maqueta / Diagrama del Rediseño de Autenticación  
 
-Propuesta parcial del rediseño del flujo de autenticación con medidas de seguridad integradas:
+A continuación se presenta una propuesta de rediseño para el flujo de autenticación, incorporando validaciones robustas y manejo seguro de credenciales:
 
 ```
 [ Usuario ]
     |
     v
-[ Formulario de Login ] --> Valida entradas (regex, max-length)
+[ Formulario de Login ] --> Validación: regex + límites de longitud
     |
     v
-[ Back-end ] --> Verifica hash (bcrypt) <--> [ Base de Datos ]
+[ Backend ] --> Verificación con bcrypt <--> [ Base de Datos ]
     |
     v
-[ Token de Sesión ] --> Encriptado, con vencimiento automático
+[ Generación de Token de Sesión ] --> Encriptado, expiración automática
+    |
+    v
+[ Redirección a Zona Segura ]
 ```
 
 ---
 
-## 4. ⚖️ Análisis de Impacto (Costo - Beneficio)
+## 4. ⚖️ Análisis de Impacto: Costo vs. Beneficio  
 
-| Propuesta                            | Costo (Tiempo / Recursos) | Beneficio Directo                        | Viabilidad |
-|-------------------------------------|----------------------------|------------------------------------------|------------|
-| Testing automatizado                | Medio (configuración inicial) | Reduce bugs en producción                | Alta       |
-| Reducción de código duplicado       | Medio                      | Menor carga técnica y más orden interno | Alta       |
-| Seguridad (validaciones y hashing)  | Medio                      | Protección de datos, confianza del usuario | Alta    |
+| Propuesta                            | Costo (Tiempo / Recursos)   | Beneficio Directo                                 | Viabilidad |
+|-------------------------------------|------------------------------|---------------------------------------------------|------------|
+| Automatización de pruebas           | Medio (inicial)              | Prevención de errores, agilidad en desarrollo     | Alta       |
+| Refactorización de código duplicado | Medio                        | Mejora de mantenimiento, reducción de errores     | Alta       |
+| Refuerzo de seguridad               | Medio - Alto (según alcance) | Protección de datos sensibles, confianza del usuario | Alta    |
 
 ---
 
-## 5. 📌 Conclusión  
-Las propuestas presentadas no solo responden a problemas identificados mediante entrevistas y herramientas como SonarQube, sino que son soluciones escalables, sostenibles y de alto impacto. Implementarlas aumentaría la calidad percibida y real del sistema EIEInfo, disminuyendo riesgos y mejorando la experiencia de uso.
+## 5. 🧾 Conclusión  
+
+Las mejoras propuestas no solo abordan debilidades técnicas identificadas objetivamente a través de herramientas como SonarQube y entrevistas a usuarios clave, sino que representan un avance tangible hacia la profesionalización de la plataforma EIEInfo. 
+
+Al implementar pruebas automatizadas, eliminar código redundante y fortalecer la seguridad, se garantiza un sistema más **estable, escalable y confiable**, alineado con las mejores prácticas del desarrollo de software moderno.
+
+Estas acciones no solo beneficiarán al equipo de desarrollo, sino también a todos los usuarios finales, quienes experimentarán una plataforma más fluida, segura y robusta.
+
+---
