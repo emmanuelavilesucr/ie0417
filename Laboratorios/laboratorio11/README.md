@@ -38,8 +38,8 @@ Implementar herramientas como `coverage.py` para código Python y el software `R
 **Ejemplo Técnico:**
 ```python
 def test_usuario_login_exitoso():
-    usuario = crear_usuario("profesorDG", "Micros123")
-    resultado = login(usuario.nombre, "Micros123")
+    usuario = crear_usuario("profesor", "contra123")
+    resultado = login(usuario.nombre, "contra123")
     assert resultado is True
 ```
 
@@ -191,7 +191,7 @@ def test_validar_input_usuario_invalido():
 
 ## 7. Conclusión  
 
-Las mejoras propuestas no solo abordan debilidades técnicas identificadas objetivamente a través de herramientas como SonarQube y entrevistas a usuarios clave, sino que representan un avance tangible hacia la profesionalización de la plataforma EIEInfo. 
+Las mejoras propuestas no solo abordan debilidades técnicas identificadas a través de herramientas como SonarQube y entrevistas a tipos distintos de usuarios, sino que representan un avance tangible hacia una verdadera mejora de la página de la escuela, de lo cual todos nos beneficiamos.  
 
 Al implementar pruebas automatizadas, eliminar código redundante y fortalecer la seguridad, se garantiza un sistema más **estable, escalable y confiable**, alineado con las mejores prácticas del desarrollo de software moderno.
 
