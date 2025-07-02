@@ -68,7 +68,7 @@ Este documento resume las entrevistas realizadas a dos usuarios de la plataforma
 
 ---
 
-## 👩<200d>🏫 Usuario 3: Margie Sánchez Chavarría
+## 👩 Usuario 3: Margie Sánchez Chavarría
 **Rol:** Recepcionista 
 
 ### Proceso mas complejo 
