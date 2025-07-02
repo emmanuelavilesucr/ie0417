@@ -80,6 +80,8 @@ Las vulnerabilidades de seguridad representan un riesgo significativo para la in
 
 ![Diagrama del Rediseño de Autenticación](Imagenes/DiagRediseñoAuth.png)
 
+![Diagrama de Seguridad](Imagenes/DiagSeguridad.png)
+
 ---
 
 ## 4. Análisis de Impacto: Costo vs. Beneficio  
@@ -94,21 +96,12 @@ Las vulnerabilidades de seguridad representan un riesgo significativo para la in
 
 ---
 
-## 5. Diagramas Técnicos Complementarios
-
-### Diagrama de Arquitectura Propuesta 
+## 5. Diagramas de Arquitectura:
 
 ![Diagrama de ARquitectura Propuesta](Imagenes/DiagArqProp.png)
 
-
 ---
 
-### Diagrama de Seguridad: Flujo de Prevención XSS y SQLi
-
-
-![Diagrama de Seguridad](Imagenes/DiagSeguridad.png)
-
----
 
 ## 6. Fragmentos de Código Adicionales
 
@@ -169,15 +162,10 @@ def test_validar_input_usuario_invalido():
 
 ---
 
----
-
 ## 7. Conclusión  
 
-Las mejoras propuestas no solo abordan debilidades técnicas identificadas a través de herramientas como SonarQube y entrevistas a tipos distintos de usuarios, sino que representan un avance tangible hacia una verdadera mejora de la página de la escuela, de lo cual todos nos beneficiamos.  
-
-Al implementar pruebas automatizadas, eliminar código redundante y fortalecer la seguridad, se garantiza un sistema más **estable, escalable y confiable**, alineado con las mejores prácticas del desarrollo de software moderno.
-
-Estas acciones no solo beneficiarán al equipo de desarrollo, sino también a todos los usuarios finales, quienes experimentarán una plataforma más fluida, segura y robusta.
+- Las mejoras propuestas no solo abordan debilidades técnicas identificadas a través de herramientas como SonarQube y entrevistas a tipos distintos de usuarios, sino que representan un avance tangible hacia una verdadera mejora de la página de la escuela, de lo cual todos nos beneficiamos.  
+Al implementar pruebas automatizadas, eliminar código redundante y fortalecer la seguridad, se garantiza un sistema más **estable, escalable y confiable**, alineado con las mejores prácticas del desarrollo de software moderno.Estas acciones no solo beneficiarán al equipo de desarrollo, sino también a todos los usuarios finales, quienes experimentarán una plataforma más fluida, segura y robusta.
 
 ---
 
