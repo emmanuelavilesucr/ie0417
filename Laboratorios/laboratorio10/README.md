@@ -68,6 +68,27 @@ Este documento resume las entrevistas realizadas a dos usuarios de la plataforma
 
 ---
 
+## 👩<200d>🏫 Usuario 3: Margie Sánchez Chavarría
+**Rol:** Recepcionista 
+
+### Proceso mas complejo 
+- Tramites relacionados con matriculas de inclusion y estudios de graduacion.
+> “La escuela ha facilitado el formulario que esta en la pagina.”
+
+### Procesos administrativos 
+- Se realiza atencion de tramites de forma presencial en secretaria, por medio de la central telefonica y por  medio del correo oficial de la escuela.
+  
+### Tiempo del proceso
+- Ya sea por telefono, correo o de forma presencial depende del tipo de consulta, ya que hay algunas rapidas y otras mas largas. 
+
+### Consultas mas comunes por parte del estudiantado
+- Tramites de graduacion. 
+- Procedimiento EXMAA.
+- Decuaciones curriculares.
+- Plan de accion Individual.
+- Consultas de practica profesional.
+---
+
 ## 🧩 Resumen de Hallazgos Clave
 
 - La plataforma es **fundamental** para la gestión académica tanto para docentes como estudiantes.
