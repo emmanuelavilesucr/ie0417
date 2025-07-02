@@ -14,7 +14,7 @@
 
 ## 1. Objetivo  
 
-El presente documento tiene como propósito identificar e implementar al menos tres mejoras técnicas, respaldadas por evidencia empírica obtenida a partir de entrevistas, análisis estático con herramientas como SonarQube y principios reconocidos de ingeniería de software. El objetivo es optimizar la **funcionalidad, seguridad y usabilidad** del sistema EIEInfo, elevando así su calidad técnica y experiencia de usuario.
+Esta fase del proyecto tiene como propósito identificar e implementar mejoras técnicas, respaldadas por evidencia empírica obtenida a partir de entrevistas, análisis estático con herramientas como SonarQube y principios reconocidos de ingeniería de software. El objetivo es optimizar la **funcionalidad, seguridad y usabilidad** del sistema EIEInfo, elevando así su calidad técnica y experiencia de usuario.
 
 ---
 
@@ -35,13 +35,6 @@ Implementar herramientas como `coverage.py` para código Python y el software `R
 - `coverage.py` – Para análisis de cobertura de pruebas unitarias.  
 - `Ranorex Studio` – Para pruebas automatizadas de interfaces gráficas.  
 
-**Ejemplo Técnico:**
-```python
-def test_usuario_login_exitoso():
-    usuario = crear_usuario("profesor", "contra123")
-    resultado = login(usuario.nombre, "contra123")
-    assert resultado is True
-```
 
 ---
 
