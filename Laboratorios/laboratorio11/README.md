@@ -80,26 +80,10 @@ Las vulnerabilidades de seguridad representan un riesgo significativo para la in
 
 **Medidas Propuestas:**  
 - Validación estricta de entradas del usuario mediante expresiones regulares.  
-- Implementación de hashing con **bcrypt** y uso de tokens seguros.  
-- Configuración adecuada de políticas **CORS** y **encriptación HTTPS**.  
+- Implementación de hashing con **bcrypt** y uso de tokens seguros.   
 - Uso de tokens temporales y autenticación basada en sesiones.
 
-**Ejemplo Técnico:**
-```python
-# Validación segura de nombre de usuario
-if not re.match(r'^[a-zA-Z0-9_]+$', nombre_usuario):
-    raise ValidationError("Nombre de usuario inválido.")
-
-# Generación de token seguro
-import secrets
-token = secrets.token_urlsafe(32)
-```
-
----
-
-## 3. Diagrama del Rediseño de Autenticación  
-
-A continuación se presenta una propuesta de rediseño para el flujo de autenticación, incorporando validaciones robustas y manejo seguro de credenciales:
+**Diagrama del Rediseño:** 
 
 ![Diagrama del Rediseño de Autenticación](Imagenes/DiagRediseñoAuth.png)
 
