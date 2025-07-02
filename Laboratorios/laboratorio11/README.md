@@ -14,7 +14,7 @@
 
 ## 1. Objetivo  
 
-Esta fase del proyecto tiene como propósito identificar e implementar mejoras técnicas, respaldadas por evidencia empírica obtenida a partir de entrevistas, análisis estático con herramientas como SonarQube y principios reconocidos de ingeniería de software. El objetivo es optimizar la **funcionalidad, seguridad y usabilidad** del sistema EIEInfo, elevando así su calidad técnica y experiencia de usuario.
+- Esta fase del proyecto tiene como propósito identificar e implementar mejoras técnicas, respaldadas por evidencia empírica obtenida a partir de entrevistas, análisis estático con herramientas como SonarQube y principios reconocidos de ingeniería de software. El objetivo es optimizar la **funcionalidad, seguridad y usabilidad** del sistema EIEInfo, elevando así su calidad técnica y experiencia de usuario.
 
 ---
 
@@ -29,37 +29,25 @@ Esta fase del proyecto tiene como propósito identificar e implementar mejoras t
 **Justificación Técnica:**  
 La cobertura de pruebas (code coverage) permite cuantificar la proporción del código fuente que ha sido verificada mediante pruebas automatizadas. Una cobertura adecuada contribuye significativamente a la estabilidad del sistema, facilita el mantenimiento y reduce el costo de errores en etapas avanzadas del ciclo de vida del software.
 
-Implementar herramientas como `coverage.py` para código Python y el software `Ranorex Studio` para pruebas funcionales de GUI garantiza un enfoque integral, abarcando tanto el backend como la interfaz gráfica del usuario.
-
-**Herramientas Sugeridas:**  
+**Medidas Propuestas:**
+Implementar herramientas como `coverage.py` para código Python y el software `Ranorex Studio` para pruebas funcionales de GUI garantiza un enfoque integral, abarcando tanto el backend como la interfaz gráfica del usuario.  
 - `coverage.py` – Para análisis de cobertura de pruebas unitarias.  
 - `Ranorex Studio` – Para pruebas automatizadas de interfaces gráficas.  
-
 
 ---
 
 ### Mejora 2: Refactorización para reducir duplicación de código  
 
 **Evidencia Técnica:**  
-- **Porcentaje de duplicación:** 29.3% en 279,000 líneas de código (SonarQube).  
+- **Porcentaje de duplicación:** 29.3% en 279,000 líneas de código (SonarQube). 
+- **Riesgo asociado:** Aumenta la deuda tecnica y aumenta la posiblidad de un mal rendimiento del sistema. 
 
 **Justificación Técnica:**  
-El principio **DRY (Don't Repeat Yourself)** es un pilar fundamental del diseño limpio y sostenible. La duplicación excesiva no solo incrementa la deuda técnica, sino que también eleva el riesgo de inconsistencias lógicas y errores al modificar el sistema.
+- El principio **DRY (Don't Repeat Yourself)** es un pilar fundamental del diseño limpio y sostenible. La duplicación excesiva no solo incrementa la deuda técnica, sino que también eleva el riesgo de inconsistencias lógicas y errores al modificar el sistema. Mediante la reutilización de componentes y plantillas base, se garantiza un sistema más limpio, mantenible y coherente.
 
-Mediante la reutilización de componentes y plantillas base, se garantiza un sistema más limpio, mantenible y coherente.
-
-**Ejemplo Técnico:**
-```html
-<!-- Código duplicado antes -->
-<div class="usuario-card">
-  <h3>{{ usuario.nombre }}</h3>
-  <p>{{ usuario.rol }}</p>
-</div>
-
-<!-- Reutilización con plantilla -->
-{% include "components/usuario_card.html" %}
-```
-
+**Medidas Propuestas:**
+- Implementacion de herramientas como **flake8** para hallar de forma precisa patrones de codigo erroneos.
+- Implementar el de **jscpd** para dectar y corregir duplicidad estructural.
 ---
 
 ### Mejora 3: Corrección de vulnerabilidades críticas de seguridad  
@@ -67,6 +55,7 @@ Mediante la reutilización de componentes y plantillas base, se garantiza un sis
 **Evidencia Técnica:**  
 - **Vulnerabilidades registradas:** 377 issues de seguridad.  
 - **Problemas tipo Blocker:** 67 (SonarQube).  
+
 
 **Justificación Técnica:**  
 Las vulnerabilidades de seguridad representan un riesgo significativo para la integridad del sistema y la privacidad de los datos de los usuarios. En particular, se identificaron posibles vectores de ataque como **Cross-Site Scripting (XSS)**, **inyecciones SQL**, y falta de **hashing seguro** de contraseñas.
@@ -91,8 +80,6 @@ Las vulnerabilidades de seguridad representan un riesgo significativo para la in
 | Automatización de pruebas           | Medio (inicial)              | Prevención de errores, agilidad en desarrollo     | Alta       |
 | Refactorización de código duplicado | Medio                        | Mejora de mantenimiento, reducción de errores     | Alta       |
 | Refuerzo de seguridad               | Medio - Alto (según alcance) | Protección de datos sensibles, confianza del usuario | Alta    |
-
-
 
 ---
 
