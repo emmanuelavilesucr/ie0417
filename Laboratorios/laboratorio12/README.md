@@ -64,7 +64,7 @@ Este documento resume las entrevistas realizadas a dos usuarios de la plataforma
 
 ---
 
-## 👩‍🏫 Usuario 1: Sofía Villalobos Brenes  
+## Usuario 1: Sofía Villalobos Brenes  
 **Rol:** Profesora Interina
 
 ### Frecuencia de uso
@@ -96,7 +96,7 @@ Este documento resume las entrevistas realizadas a dos usuarios de la plataforma
 
 ---
 
-## 👨‍🎓 Usuario 2: Santiago Arias  
+## Usuario 2: Santiago Arias  
 **Rol:** Estudiante de Ingeniería Eléctrica
 
 ### Frecuencia de uso
@@ -128,7 +128,7 @@ Este documento resume las entrevistas realizadas a dos usuarios de la plataforma
 
 ---
 
-## 👩 Usuario 3: Margie Sánchez Chavarría
+## Usuario 3: Margie Sánchez Chavarría
 **Rol:** Recepcionista 
 
 ### Proceso mas complejo 
@@ -136,8 +136,9 @@ Este documento resume las entrevistas realizadas a dos usuarios de la plataforma
 > “La escuela ha facilitado el formulario que esta en la pagina.”
 
 ### Procesos administrativos 
-- Se realiza atencion de tramites de forma presencial en secretaria, por medio de la central telefonica y por  medio del correo oficial de la escuela.
-  
+- Se realiza atencion de tramites de forma presencial en secretaria, por medio de la central telefonica y por medio del correo oficial de la escuela.
+- Contestar y trasladar correos.
+
 ### Tiempo del proceso
 - Ya sea por telefono, correo o de forma presencial depende del tipo de consulta, ya que hay algunas rapidas y otras mas largas. 
 
@@ -149,9 +150,9 @@ Este documento resume las entrevistas realizadas a dos usuarios de la plataforma
 - Consultas de practica profesional.
 ---
 
-## 🧩 Resumen de Hallazgos Clave
+## Resumen de Hallazgos Clave
 
-- La plataforma es **fundamental** para la gestión académica tanto para docentes como estudiantes.
+- La plataforma es **fundamental** para la gestión académica tanto para docentes como estudiantes, y aliviana la carga del trabajo del sector administrativo.
 - Las funciones principales **son útiles y valoradas**, pero el sistema presenta **limitaciones en experiencia de usuario**.
 - Se identifican problemas recurrentes como **caídas del sistema** y **falta de soporte interactivo**.
 - Se recomienda:
@@ -167,9 +168,9 @@ Este documento resume las entrevistas realizadas a dos usuarios de la plataforma
 # SonarQube
 ## Analisis general:
 
-![CodigoGeneral](https://github.com/DAcosta3103/ie0417-proyecto/blob/main/Laboratorios/laboratorio10/Analisis%20/Imagenes/CodigoGeneral.png)
+![CodigoGeneral](Imagenes/CodigoGeneral.png)
 
-![Actividad](https://github.com/DAcosta3103/ie0417-proyecto/blob/main/Laboratorios/laboratorio10/Analisis%20/Imagenes/Actividad.png)
+![Actividad](Imagenes/Actividad.png)
 
 En general los resultados arrojados por SonarQube muestran un panorama muy positivos. Por otro lado, el análisis sugiere que el sitio web necesita mejorar su seguridad y fiabilidad. Además, se sugiere implementar testing automático para elevar la cobertura, y reducir las duplicaciones mediante refactorización para que el proyecto sea más sostenible.
 
@@ -186,7 +187,7 @@ En general los resultados arrojados por SonarQube muestran un panorama muy posit
 
 - **Problemas aceptados:** No existen problemas aceptados, lo que significa que no hay debilidades encontradas o también, podría deberse a que nadie ha realizado un análisis a profundidad sobre la jerarquía de problemas a resolver.
 
-![Severidad](https://github.com/DAcosta3103/ie0417-proyecto/blob/main/Laboratorios/laboratorio10/Analisis%20/Imagenes/Severidad.png)
+![Severidad](Imagenes/Severidad.png)
 
 - La **Severidad** clasifica los problemas según su impacto potencial en la calidad del código. Los **Blocker** son problemas críticos, que pueden provocar que el sistema falle por completo o que sea inseguro o inutilizable. Los problemas **High**, son errores severos que pueden provocar fallos en entornos productivos. Los **Medium** representan problemas que impactan la calidad y el mantenimiento, pero que no detendrán el sistema.**Low** y **Info** son **Issues menores**, y se refieren mas convenciones del código y sugerencias informativas que ayudan a mejorar la legibilidad y consistencia del código.
 
@@ -197,24 +198,108 @@ En general los resultados arrojados por SonarQube muestran un panorama muy posit
 
 ### Fiabilidad:
 
-![Fiabilidad](https://github.com/DAcosta3103/ie0417-proyecto/blob/main/Laboratorios/laboratorio10/Analisis%20/Imagenes/Fiabilidad.png)
+![Fiabilidad](Imagenes/Fiabilidad.png)
 
 ### Cobertura:
 
-![Cobertura](https://github.com/DAcosta3103/ie0417-proyecto/blob/main/Laboratorios/laboratorio10/Analisis%20/Imagenes/Cobertura.png)
+![Cobertura](Imagenes/Cobertura.png)
 
 ### Mantenibilidad:
 
-![Mantenibilidad](https://github.com/DAcosta3103/ie0417-proyecto/blob/main/Laboratorios/laboratorio10/Analisis%20/Imagenes/Mantenibilidad.png)
+![Mantenibilidad](Imagenes/Mantenibilidad.png)
 
 ### Duplicacion:
 
-![Duplicacion](https://github.com/DAcosta3103/ie0417-proyecto/blob/main/Laboratorios/laboratorio10/Analisis%20/Imagenes/Duplicaciones.png)
+![Duplicacion](Imagenes/Duplicaciones.png)
 
 
 ### Riesgo:
 
-![Riesgo](https://github.com/DAcosta3103/ie0417-proyecto/blob/main/Laboratorios/laboratorio10/Analisis%20/Imagenes/Riesgo.png)
+![Riesgo](Imagenes/Riesgo.png)
+
+
+# Posibles mejoras
+
+### Mejora 1: Implementación de pruebas automatizadas (Testing Coverage)  
+
+**Evidencia Técnica:**  
+- **Cobertura actual de pruebas:** 0.0% (SonarQube).  
+- **Riesgo asociado:** Aumenta la probabilidad de defectos no identificados antes del despliegue en producción.
+
+**Justificación Técnica:**  
+La cobertura de pruebas (code coverage) permite cuantificar la proporción del código fuente que ha sido verificada mediante pruebas automatizadas. Una cobertura adecuada contribuye significativamente a la estabilidad del sistema, facilita el mantenimiento y reduce el costo de errores en etapas avanzadas del ciclo de vida del software.
+
+**Medidas Propuestas:**
+Implementar herramientas como `coverage.py` para código Python y el software `Ranorex Studio` para pruebas funcionales de GUI garantiza un enfoque integral, abarcando tanto el backend como la interfaz gráfica del usuario.  
+- `coverage.py` – Para análisis de cobertura de pruebas unitarias.  
+- `Ranorex Studio` – Para pruebas automatizadas de interfaces gráficas.  
+
+---
+
+### Mejora 2: Refactorización para reducir duplicación de código  
+
+**Evidencia Técnica:**  
+- **Porcentaje de duplicación:** 29.3% en 279,000 líneas de código (SonarQube). 
+- **Riesgo asociado:** Aumenta la deuda tecnica y aumenta la posiblidad de un mal rendimiento del sistema. 
+
+**Justificación Técnica:**  
+- El principio **DRY (Don't Repeat Yourself)** es un pilar fundamental del diseño limpio y sostenible. La duplicación excesiva no solo incrementa la deuda técnica, sino que también eleva el riesgo de inconsistencias lógicas y errores al modificar el sistema. Mediante la reutilización de componentes y plantillas base, se garantiza un sistema más limpio, mantenible y coherente.
+
+**Medidas Propuestas:**
+- Implementacion de herramientas como **flake8** para hallar de forma precisa patrones de codigo erroneos.
+- Implementar el de **jscpd** para dectar y corregir duplicidad estructural.
+---
+
+![Diagrama propuesto](Imagenes/DiagramaDuplicidad.jpeg)
 
 
 
+### Mejora 3: Corrección de vulnerabilidades críticas de seguridad  
+
+**Evidencia Técnica:**  
+- **Vulnerabilidades registradas:** 377 issues de seguridad.  
+- **Problemas tipo Blocker:** 67 (SonarQube).  
+
+
+**Justificación Técnica:**  
+Las vulnerabilidades de seguridad representan un riesgo significativo para la integridad del sistema y la privacidad de los datos de los usuarios. En particular, se identificaron posibles vectores de ataque como **Cross-Site Scripting (XSS)**, **inyecciones SQL**, y falta de **hashing seguro** de contraseñas.
+
+**Medidas Propuestas:**  
+- Validación estricta de entradas del usuario mediante expresiones regulares.  
+- Implementación de hashing con **bcrypt** y uso de tokens seguros.   
+- Uso de tokens temporales y autenticación basada en sesiones.
+
+### Mejora 4: Alivianar la carga de trabajo administrativo y agilizar procesos
+
+**Evidencia:** Sofía menciona que en su opinión el hecho de que la página le ayude al sector administrativo a agilizar el trabajo que tienen. Entonces también se conduce una entrevista con Margie Sánchez,, recepcionista de la escuela.
+
+**Justificación:** Ya se ha hecho un buen trabajo con agilizar ciertos trámites al brindar sus respectivos formularios, como los estudios de graduación, matrícula por carta, o bien mejorar el trámite como con el cambio de énfasis.
+
+**Medidas propuestas:**
+- Hacer una sección de preguntas frecuentes (FAQ) para disminuir la cantidad de consultas que se le hacen a recepción, como trámites de graduación, procedimiento EXMAA, procedimiento para el PAI, etc.
+- Integrar una sección de solicitud de trámite la cual notifique automáticamente a profesores para que así recepción no tenga que contestar y redirigir correos triviales que pueden ser manejados con respuesta automática.
+- Realizar un sistema que ayude con clasificar archivos para agilizar el proceso de inclusión de archivos al Sistema de Gestión de Documentos Institucional SIGeDI
+
+![Flujo de trabajo del SIGEDI](Imagenes/FlujoTrabajoSIGEDI.png)
+
+## Análisis de Impacto: Costo vs. Beneficio  
+
+| Propuesta                            | Costo (Tiempo / Recursos)   |  Beneficio |
+|-------------------------------------|------------------------------|------------|
+| Automatización de pruebas           | Medio/Alto (inicial)         | Reducción de deuda técnica con revisión automática       |
+| Refactorización de código duplicado | Medio/Alto                   | Disminuiría la deuda técnica y podría agilizar futuras implementaciones       |
+| Refuerzo de seguridad               | Medio/Alto                   | El uso de tokens aportaría mucho a la seguridad de datos  |
+| Funciones para sector administratico  |         Medio              | Alivianaría la carga de dicho sector mediante procesos automatizables       |
+
+---
+
+# Diagramas de Arquitectura:
+
+![Diagrama de Arquitectura Propuesta](Imagenes/DiagArqProp.png)
+
+---
+
+#  Conclusión  
+
+En conclusión, las mejoras propuestas abordan debilidades técnicas identificadas a través de la herramienta SonarQube, e implementaciones a partir de datos recopilados de entrevistas a tres tipos de usuarios clave en la escuela, buscando lograr así una verdadera mejora de la página de la escuela, de la cual todos nos beneficiamos.  
+Al implementar pruebas automatizadas, eliminar código redundante y fortalecer la seguridad, se garantiza un sistema más **estable, escalable y confiable**, aumentando la calidad del trabajo y disminuyendo la deuda técnica para que futuros estudiantes que deseen trabajar en el proyecto puedan entrarle sin sentirse tan abrumados al inicio. Estas acciones no solo beneficiarán al equipo de desarrollo, sino también a nosotros los usuarios finales, quienes experimentaríamos una plataforma más fluida, segura y robusta, donde tal vez hasta se pueda crear una mayor cultura de uso de la página.

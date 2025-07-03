@@ -75,11 +75,11 @@ Las vulnerabilidades de seguridad representan un riesgo significativo para la in
 
 ## 4. Análisis de Impacto: Costo vs. Beneficio  
 
-| Propuesta                            | Costo (Tiempo / Recursos)   | Beneficio Directo                                 | Viabilidad |
+| Propuesta                            | Costo (Tiempo / Recursos)   | Beneficio Directo                                 | Beneficio |
 |-------------------------------------|------------------------------|---------------------------------------------------|------------|
-| Automatización de pruebas           | Medio (inicial)              | Prevención de errores, agilidad en desarrollo     | Alta       |
-| Refactorización de código duplicado | Medio                        | Mejora de mantenimiento, reducción de errores     | Alta       |
-| Refuerzo de seguridad               | Medio - Alto (según alcance) | Protección de datos sensibles, confianza del usuario | Alta    |
+| Automatización de pruebas           | Medio/Alto (inicial)              | Prevención de errores, agilidad en desarrollo     | Reducción de deuda técnica con revisión automática       |
+| Refactorización de código duplicado | Medio/Alto                        | Mejora de mantenimiento, reducción de errores     | Disminuiría la deuda técnica y podría agilizar futuras implementaciones       |
+| Refuerzo de seguridad               | Medio/Alto | Protección de datos sensibles, confianza del usuario | El uso de tokens aportaría mucho a la segurodad de datos  |
 
 ---
 
