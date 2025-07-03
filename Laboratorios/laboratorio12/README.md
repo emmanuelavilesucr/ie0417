@@ -230,9 +230,11 @@ En general los resultados arrojados por SonarQube muestran un panorama muy posit
 La cobertura de pruebas (code coverage) permite cuantificar la proporción del código fuente que ha sido verificada mediante pruebas automatizadas. Una cobertura adecuada contribuye significativamente a la estabilidad del sistema, facilita el mantenimiento y reduce el costo de errores en etapas avanzadas del ciclo de vida del software.
 
 **Medidas Propuestas:**
-Implementar herramientas como `coverage.py` para código Python y el software `Ranorex Studio` para pruebas funcionales de GUI garantiza un enfoque integral, abarcando tanto el backend como la interfaz gráfica del usuario.  
+Implementar herramientas como `coverage.py` para medir la cobertura de código y determinar las partes del código se han ejecutado con eficacia por medio de un informe HTML generado por **Coverage.py.**
 - `coverage.py` – Para análisis de cobertura de pruebas unitarias.  
-- `Ranorex Studio` – Para pruebas automatizadas de interfaces gráficas.  
+
+![Diagrama propuesto](Imagenes/TestingCoverage.jpeg)
+
 
 ---
 
